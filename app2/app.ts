@@ -1,41 +1,16 @@
-class Spacecraft {
-    constructor (public propulsor: string){}
+import {Spacecraft, ContainerShip} from './base-ships'
+import {MilleniumFalcon} from './starfighters'
 
-    jumpIntHyperspace(){
-        console.log(`Entering hypercaralha with ${this.propulsor}`);
-    }
-}
+import * as _ from 'lodash'
+
+console.log(_.pad("Typescript Examples", 40, "="))
+
 
 let ship = new Spacecraft('hyperdrive')
 ship.jumpIntHyperspace()
 
-
-class MilleniumFalcon extends Spacecraft implements ContainerShip {
-
-    cargoContainers: number
-
-    constructor(){
-        super('hyperdrive')
-        this.cargoContainers = 2
-    }
-
-    jumpIntHyperspace(){
-        if(Math.random() >= 0.5){
-            super.jumpIntHyperspace() 
-        }else{
-            console.log('Failede to jumpe into hyperspaced')
-        }
-    }
-}
-
 let falcon = new MilleniumFalcon()
 falcon.jumpIntHyperspace()
-
-
-interface ContainerShip {
-
-    cargoContainers: number
-}
 
 let goodForTheJob = (ship: ContainerShip) => ship.cargoContainers > 2
 
