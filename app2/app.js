@@ -34,7 +34,7 @@ var MilleniumFalcon = /** @class */ (function (_super) {
             _super.prototype.jumpIntHyperspace.call(this);
         }
         else {
-            console.log('Failede to jumpe into hyperspaced');
+            console.log('Failed to jumpa into hyperspace');
         }
     };
     return MilleniumFalcon;
